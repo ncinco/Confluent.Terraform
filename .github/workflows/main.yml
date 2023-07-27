@@ -1,1 +1,55 @@
+name: '0002 - Control Plane'
+ 
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: "Domain you're targeting for deployment."
+        type: choice
+        required: true
+        options:
+        - accounts
+        - kiwisaver
+ 
+jobs:
+  dev:
+    name: 'dev'
+    env:
+      CONFLUENT_CLOUD_API_KEY: ${{ secrets.CONFLUENT_CLOUD_API_KEY }}
+      CONFLUENT_CLOUD_API_SECRET: ${{secrets.CONFLUENT_CLOUD_API_SECRET}}
+      TERM: linux
+    runs-on: ubuntu-latest
+    environment: dev
+ 
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+ 
+    steps:
+    - uses: hashicorp/setup-terraform@v2
+    
+    - name: 'Checkout'
+      id: checkout
+      uses: actions/checkout@v3
+ 
+    - name: 'Terraform Format'
+      id: format
+      run: terraform fmt
+         
+    - name: 'Terraform Init'
+      id: init
+      run: terraform init
+ 
+    - name: 'Terraform Validate'
+      id: validate
+      run: terraform validate
 
+    - name: 'Terraform Plan'
+      id: plan
+      run: terraform plan
+ 
+    - name: Terraform Apply
+      id: apply
+      if: github.ref == 'refs/heads/main'
+      run: terraform apply -auto-approve
