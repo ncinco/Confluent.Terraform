@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       destroy:
-        description: "Select yes if you want to delete the resources."
+        description: "Select yes if you want to destroy the resources."
         type: choice
         required: true
         options:
