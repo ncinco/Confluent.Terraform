@@ -48,9 +48,17 @@ jobs:
 
     - name: 'Terraform Plan'
       id: plan
-      run: terraform plan
+      run: |
+        if delete = 'yes'
+          terraform plan -delete -auto-approve
+        then
+          terraform plan -auto-approve
  
     - name: Terraform Apply
       id: apply
       if: github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve
+      run: |
+        if delete = 'yes'
+          terraform apply -delete -auto-approve
+        then
+          terraform apply -auto-approve
