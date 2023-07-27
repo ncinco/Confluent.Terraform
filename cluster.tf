@@ -3,7 +3,7 @@ resource "confluent_environment" "development" {
 }
 
 resource "confluent_kafka_cluster" "basic-cluster" {
-  display_name = "basic_kafka_cluster"
+  display_name = "basic-cluster"
   availability = "SINGLE_ZONE"
   cloud        = "GCP"
   region       = "us-central1"
