@@ -1,4 +1,4 @@
-name: '0002 - Control Plane'
+name: 'Main'
  
 on:
   workflow_dispatch:
