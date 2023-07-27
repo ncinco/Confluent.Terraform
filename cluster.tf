@@ -1,0 +1,19 @@
+resource "confluent_environment" "development" {
+  display_name = "Development"
+}
+
+resource "confluent_kafka_cluster" "basic" {
+  display_name = "basic_kafka_cluster"
+  availability = "SINGLE_ZONE"
+  cloud        = "GCP"
+  region       = "us-central1"
+  basic {}
+
+  environment {
+    id = confluent_environment.development.id
+  }
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
