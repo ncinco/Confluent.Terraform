@@ -54,6 +54,7 @@ jobs:
           terraform plan -delete -auto-approve
         else
           terraform plan -auto-approve
+        fi
  
     - name: Terraform Apply
       id: apply
@@ -64,3 +65,4 @@ jobs:
           terraform apply -delete -auto-approve
         else
           terraform apply -auto-approve
+        fi
