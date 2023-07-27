@@ -51,9 +51,9 @@ jobs:
       run: |
         if '${{ github.event.inputs.destroy }}' == 'true'
         then
-          terraform plan -destroy -auto-approve
+          terraform plan -destroy
         else
-          terraform plan -auto-approve
+          terraform plan
         fi
  
     - name: Terraform Apply
@@ -62,7 +62,7 @@ jobs:
       run: |
         if '${{ github.event.inputs.destroy }}' == 'true'
         then
-          terraform apply -destroy -auto-approve
+          terraform apply -destroy --auto-approve
         else
-          terraform apply -auto-approve
+          terraform apply --auto-approve
         fi
