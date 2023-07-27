@@ -50,8 +50,9 @@ jobs:
       id: plan
       run: |
         if ${{ github.event.inputs.delete }}
-          terraform plan -delete -auto-approve
         then
+          terraform plan -delete -auto-approve
+        else
           terraform plan -auto-approve
  
     - name: Terraform Apply
@@ -59,6 +60,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         if ${{ github.event.inputs.delete }}
-          terraform apply -delete -auto-approve
         then
+          terraform apply -delete -auto-approve
+        else
           terraform apply -auto-approve
