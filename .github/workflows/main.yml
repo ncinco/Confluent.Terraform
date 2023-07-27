@@ -2,6 +2,14 @@ name: 'Main'
  
 on:
   workflow_dispatch:
+    inputs:
+      delete:
+        description: "Select yes if you want to delete the resources."
+        type: choice
+        required: true
+        options:
+        - no
+        - yes
 
 jobs:
   dev:
