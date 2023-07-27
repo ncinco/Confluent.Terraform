@@ -11,3 +11,4 @@ resource "confluent_api_key" "basic_kafka_cluster-app-manage-kafka-api-key" {
     api_version = confluent_service_account.basic_kafka_cluster-app-manager.api_version
     kind        = confluent_service_account.basic_kafka_cluster-app-manager.kind
   }
+}
