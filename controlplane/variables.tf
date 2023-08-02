@@ -23,3 +23,8 @@ variable "cluster_region" {
   description = "Region of a cluster"
   type        = string
 }
+
+variable "topics" {
+  description = "List of kafka topics"
+  type        = list(string)
+}
