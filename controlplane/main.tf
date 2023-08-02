@@ -32,7 +32,7 @@ resource "confluent_kafka_topic" "kafka_topics" {
     secret = confluent_api_key.app-manager-kafka-api-key.secret
   }
   config = {
-    "cleanup.policy"                      = each.value.cleanup_policy
+    "cleanup.policy"                      = "delete"
   }
 
   lifecycle {
