@@ -12,14 +12,8 @@ provider "confluent" {
   cloud_api_secret = var.confluent_cloud_api_secret
 }
 
-locals {
-  topics_data = jsondecode(templatefile("./${path.module}/topics.tpl", {
-    topics  = jsonencode(var.topics)
-  }))
-}
-
 resource "confluent_kafka_topic" "kafka_topics" {
-  for_each           = { for topic in local.topics_data.topics : topic.name => topic }
+  for_each           = { for topic in var.topics : topic.name => topic }
   
   kafka_cluster {
     id = confluent_kafka_cluster.kafka_cluster.id
@@ -32,7 +26,7 @@ resource "confluent_kafka_topic" "kafka_topics" {
     secret = confluent_api_key.app-manager-kafka-api-key.secret
   }
   config = {
-    "cleanup.policy"                      = "delete"
+    "cleanup.policy" = each.value.cleanup_policy
   }
 
   lifecycle {

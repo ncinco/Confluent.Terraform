@@ -1,6 +1,6 @@
 resource "confluent_api_key" "app-manager-kafka-api-key" {
-  display_name = "app-manager-kafka-api-key"
-  description  = "Kafka API Key that is owned by 'app-manager' service account"
+  display_name = "Cluster: ${var.cluster_name} App Manager API Key"
+  description  = "Kafka API Key that is owned by '${var.cluster_name}-app-manager' service account"
   owner {
     id          = confluent_service_account.app-manager.id
     api_version = confluent_service_account.app-manager.api_version

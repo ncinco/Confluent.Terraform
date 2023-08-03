@@ -1,5 +1,5 @@
 resource "confluent_environment" "prod" {
-  display_name = "prod"
+  display_name = "${var.environment}"
 
   lifecycle {
     prevent_destroy = true

@@ -1,23 +1,34 @@
-# cluster related variables
+variable "confluent_cloud_api_key" {
+  description = "Confluent Cloud API Key (also referred as Cloud API ID)"
+  type        = string
+}
+
+variable "confluent_cloud_api_secret" {
+  description = "Confluent Cloud API Secret"
+  type        = string
+  sensitive   = true
+}
+
+variable "environment" {
+  description = "Name of environment"
+  type        = string
+}
+
 variable "cluster_name" {
   description = "Name of a cluster"
   type        = string
-  default     = "bank_accounts_cluster"
 }
 
 variable "cluster_cloud" {
   description = "Cloud provider of a cluster"
   type        = string
-  default     = "AZURE"
 }
 
 variable "cluster_region" {
   description = "Region of a cluster"
   type        = string
-  default     = "australiaeast"
 }
 
-# topic related variables
 variable "topics" {
   description = "List of kafka topic(s) for a cluster"
   type = list(object({
@@ -25,9 +36,4 @@ variable "topics" {
     partitions_count = number
     cleanup_policy = string
   }))
-  default = [
-    { name = "accounts", partitions_count = 8, cleanup_policy = "delete"},
-    { name = "transactions", partitions_count = 7, cleanup_policy = "delete"},
-    { name = "superman", partitions_count = 7, cleanup_policy = "delete"}
-  ]
 }
