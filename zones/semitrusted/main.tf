@@ -8,7 +8,7 @@ terraform {
 }
 
 module "controlplane" {
-  source = "../../../modules/controlplane"
+  source = "../../modules/controlplane"
 	
   confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
@@ -18,7 +18,4 @@ module "controlplane" {
   cluster_name               = var.cluster_name
   cluster_cloud              = var.cluster_cloud
   cluster_region             = var.cluster_region
-
-  # topic related variables
-  topics                     = var.topics
 }

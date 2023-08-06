@@ -28,12 +28,3 @@ variable "cluster_region" {
   description = "Region of a cluster"
   type        = string
 }
-
-variable "topics" {
-  description = "List of kafka topic(s) for a cluster"
-  type = list(object({
-    name = string
-    partitions_count = number
-    cleanup_policy = string
-  }))
-}
