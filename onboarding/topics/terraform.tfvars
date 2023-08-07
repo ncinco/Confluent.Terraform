@@ -7,7 +7,7 @@ app_manager_api_secret = "jySRE6Fx/iubikRc0vE7iOJogy5p9ZD/V4F+1OP1M6lOC1QHJJTevd
 
 # topic related variables
 topics = [
-  { name = "accounts", partitions_count = 3, cleanup_policy = "delete" },
-  { name = "transactions", partitions_count = 3, cleanup_policy = "delete" },
-  { name = "superman", partitions_count = 3, cleanup_policy = "delete" }
+  { name = "accounts", partitions_count = 3, cleanup_policy = "compact" },
+  { name = "transactions", partitions_count = 3, cleanup_policy = "compact" },
+  { name = "superman", partitions_count = 3, cleanup_policy = "compact" }
 ]
