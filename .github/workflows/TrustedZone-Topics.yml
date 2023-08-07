@@ -1,4 +1,4 @@
-name: 'Onboarding - Topics'
+name: 'TrustedZone-Topics'
  
 on:
   workflow_dispatch:
