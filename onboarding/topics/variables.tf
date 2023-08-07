@@ -29,8 +29,8 @@ variable "app_manager_api_secret" {
 variable "topics" {
   description = "List of kafka topic(s) for a cluster"
   type = list(object({
-    name = string
+    name             = string
     partitions_count = number
-    cleanup_policy = string
+    cleanup_policy   = string
   }))
 }
