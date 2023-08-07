@@ -7,7 +7,6 @@ terraform {
   }
 }
 
-
 provider "confluent" {
   cloud_api_key    = "2UIEY3CFZLK2FHO2"
   cloud_api_secret = "sUtPE0Kfkp5Y24V2AJZaXGgq2W58SnuRo6RP+V+HSWiJ4x2uG3afxSfq1ppoIQJG"
