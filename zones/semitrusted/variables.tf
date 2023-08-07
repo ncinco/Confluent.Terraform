@@ -1,11 +1,11 @@
 # cluster related variables
-variable "cluster_name" {
-  description = "Name of a cluster"
+variable "environment" {
+  description = "Name of environment"
   type        = string
 }
 
-variable "environment" {
-  description = "Name of environment"
+variable "cluster_name" {
+  description = "Name of a cluster"
   type        = string
 }
 
