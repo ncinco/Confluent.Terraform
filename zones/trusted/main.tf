@@ -9,13 +9,6 @@ terraform {
       version = "=3.55.0"
     }
   }
-
-  /* backend "azurerm" {
-    resource_group_name  = "Terraform_State"
-    storage_account_name = "confluentstate"
-    container_name       = "dev"
-    key                  = "trusted.tfstate"
-  } */
 }
 
 module "controlplane" {
