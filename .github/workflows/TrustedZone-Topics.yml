@@ -18,7 +18,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./onboarding/topics/trusted
+        working-directory: ./onboarding/trusted
  
     steps:
     - uses: hashicorp/setup-terraform@v2
