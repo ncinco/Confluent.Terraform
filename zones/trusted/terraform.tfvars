@@ -1,5 +1,5 @@
 # cluster related variables
-environment = "trusted"
-cluster_name = "trusted"
+environment = "trusted_test"
+cluster_name = "trusted_test"
 cluster_cloud = "AZURE"
 cluster_region = "australiaeast"
