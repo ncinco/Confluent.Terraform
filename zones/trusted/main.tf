@@ -5,6 +5,13 @@ terraform {
       version = "1.51.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "Terraform_State"
+    storage_account_name = "astradbstate"
+    container_name       = "dev"
+    key                  = "trusted.tfstate"
+  }
 }
 
 module "controlplane" {
