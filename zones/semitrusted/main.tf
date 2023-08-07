@@ -10,8 +10,8 @@ terraform {
 module "controlplane" {
   source = "../../modules/controlplane"
 	
-  confluent_cloud_api_key    = var.confluent_cloud_api_key
-  confluent_cloud_api_secret = var.confluent_cloud_api_secret
+  /* confluent_cloud_api_key    = var.confluent_cloud_api_key
+  confluent_cloud_api_secret = var.confluent_cloud_api_secret */
 
   # cluster related variables
   environment                = var.environment
