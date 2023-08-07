@@ -8,7 +8,7 @@ terraform {
 }
 
 module "dataplane" {
-  source = "../../../modules/dataplane"
+  source = "../../modules/dataplane"
 
   # cluster related variables
   environment_id         = var.environment_id
