@@ -11,8 +11,11 @@ module "dataplane" {
   source = "../../modules/dataplane"
 	
   # cluster related variables
-  environment                = var.environment
-  cluster_name               = var.cluster_name
+  environment_id             = var.environment_id
+  cluster_id                 = var.cluster_id
+  rest_endpoint              = var.rest_endpoint
+  app_manager_api_key        = var.app_manager_api_key
+  app_manager_api_secret     = var.app_manager_api_secret
 
   # topic related variables
   topics                     = var.topics
