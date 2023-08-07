@@ -9,7 +9,7 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "Terraform_State"
     storage_account_name = "confluentstate"
-    container_name       = "dev"
+    container_name       = "untrusted"
     key                  = "control_plane.tfstate"
   }
 }
