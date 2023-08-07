@@ -21,12 +21,12 @@ jobs:
       TERM: linux
     runs-on: ubuntu-latest
     environment: dev
-    working-directory: ./zones/trusted
  
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
+        working-directory: ./zones/trusted
  
     steps:
     - uses: hashicorp/setup-terraform@v2
