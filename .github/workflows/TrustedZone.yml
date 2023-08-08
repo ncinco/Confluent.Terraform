@@ -2,14 +2,6 @@ name: 'TrustedZone'
  
 on:
   workflow_dispatch:
-    inputs:
-      destroy:
-        description: "Select yes if you want to destroy the resources."
-        type: choice
-        required: true
-        options:
-        - no
-        - yes
 
 jobs:
   dev:
