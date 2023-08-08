@@ -44,8 +44,11 @@ resource "azurerm_key_vault" "confluent_cloud_key_vault" {
   }
 }
 
+data "azurerm_subscription" "primary" {
+}
+
 resource "azurerm_role_assignment" "service-principal-role-assignment" {
   scope                = data.azurerm_subscription.primary.id
   role_definition_name = "Key Vault Administrator"
-  principal_id         = data.azuread_group.object_id
+  principal_id         = "4ca9551e-8694-474e-be92-727915c126f1"
 }
