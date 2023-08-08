@@ -18,6 +18,10 @@ terraform {
   }
 }
 
+provider "azurerm" {
+   features {}
+}
+
 module "azureresources" {
   source = "../../modules/azureresources"
 	
