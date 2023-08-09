@@ -3,6 +3,10 @@ environment = "trusted"
 cluster_name = "trusted"
 cluster_cloud = "AZURE"
 cluster_region = "australiaeast"
+service_accounts = [
+    { name = "CloudClusterAdmin service account.", description = "CloudClusterAdmin service account."},
+    { name = "Operator service account.", description = "Operator service account."}
+]
 
 # azure resources
 resource_group_name = "confluent_resource_group"

@@ -19,6 +19,22 @@ variable "cluster_region" {
   type        = string
 }
 
+# service account related variables
+variable "service_accounts" {
+  description = "List of service accounts(s) for a cluster"
+  type = list(object({
+    name = string
+    description = string
+  }))
+}
+
+
+
+
+
+
+
+
 # azure resources
 variable "resource_group_name" {
   description = "Name of resource group"
