@@ -4,8 +4,8 @@ cluster_name = "trusted"
 cluster_cloud = "AZURE"
 cluster_region = "australiaeast"
 service_accounts = [
-    { name = "trusted.cloud-cluster-admin-sa", description = "CloudClusterAdmin service account."},
-    { name = "trusted.operator-sa", description = "Operator service account."}
+    { name = "trusted.sa.cloud-cluster-admin", description = "CloudClusterAdmin service account."},
+    { name = "trusted.sa.operator", description = "Operator service account."}
 ]
 
 # azure resources
