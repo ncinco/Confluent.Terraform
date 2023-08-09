@@ -26,3 +26,13 @@ variable "service_accounts" {
     description = string
   }))
 }
+
+variable "api_keys" {
+  description = "List of api key(s) for a cluster"
+  type = list(object({
+    name = string
+    description = string
+    service_account_id = string
+    cluster_id = string
+  }))
+}
