@@ -42,6 +42,7 @@ module "controlplane" {
   cluster_cloud              = var.cluster_cloud
   cluster_region             = var.cluster_region
 
+  # service account related variables
   service_accounts           = var.service_accounts
   api_keys                   = var.api_keys
 }
