@@ -39,6 +39,7 @@ jobs:
     - name: 'Run az commands'
       run: |
         az group list
+        az keyvault list
 
     - uses: hashicorp/setup-terraform@v2
 
