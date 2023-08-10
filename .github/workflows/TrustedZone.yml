@@ -3,6 +3,10 @@ name: 'TrustedZone'
 on:
   workflow_dispatch:
 
+permissions:
+  id-token: write # write is required for requesting the JWT
+  contents: read 
+
 jobs:
   dev:
     name: 'dev'
