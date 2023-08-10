@@ -28,7 +28,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./zones/trusted
+        # working-directory: ./zones/trusted
  
     steps:
     - name: 'Az CLI login'
