@@ -22,17 +22,6 @@ provider "azurerm" {
   features {}
 }
 
-module "azureresources" {
-  source = "../../modules/azureresources"
-	
-  resource_group_name                  = var.resource_group_name
-  resource_group_location              = var.resource_group_location
-  
-  key_vault_name                       = var.key_vault_name
-  key_vault_sku_name                   = var.key_vault_sku_name
-  key_vault_soft_delete_retention_days = var.key_vault_soft_delete_retention_days
-}
-
 module "controlplane" {
   source = "../../modules/controlplane"
 	
