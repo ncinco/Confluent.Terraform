@@ -22,24 +22,25 @@ confluent_cloud_api_url = "https://api.confluent.cloud/iam/v2/api-keys"
 # Common http headers
 headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer ' + access_token,
+    'Authorization': 'Basic ' + access_token,
 }
 
 try:
   payload = {
-    'spec': {
-      'display_name': display_name,
-      'description': description,
-      'owner': {
-        'id': owner_id
+    "spec": {
+      "display_name": display_name,
+      "description": description,
+      "owner": {
+        "id": owner_id
       },
-      'resource': {
-        'id': resource_id
+      "resource": {
+        "id": resource_id
       }
     }
   }
 
   api_key_response = pip._vendor.requests.api.post(confluent_cloud_api_url, data=json.dumps(payload), headers=headers, timeout=30)
+  api_key_response.raise_for_status()
 
 except pip._vendor.requests.exceptions.HTTPError as error:
   print(error)
