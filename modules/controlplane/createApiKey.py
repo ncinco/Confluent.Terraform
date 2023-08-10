@@ -16,6 +16,7 @@ description = "trusted.api-key.cloud-cluster-admin"
 owner_id = "sa-156m83"
 resource_id = "lkc-r2wydp"
 
+
 # constants
 confluent_cloud_api_url = "https://api.confluent.cloud/iam/v2/api-keys"
 
@@ -41,7 +42,6 @@ try:
 
   api_key_response = pip._vendor.requests.api.post(confluent_cloud_api_url, data=json.dumps(payload), headers=headers, timeout=30)
   api_key_response.raise_for_status()
-
 except pip._vendor.requests.exceptions.HTTPError as error:
   print(error)
   exit(1)
