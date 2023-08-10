@@ -15,17 +15,18 @@ service_accounts = [
     description = "Operator service account for Trusted cluster."
   }
 ]
+
 api_keys = [
   {
     name = "trusted.api-key.cloud-cluster-admin",
     description = "trusted.api-key.cloud-cluster-admin",
-    service_account_id = "sa-rvwrpk",
-    cluster_id = "lkc-6o6706"
+    service_account_id = "sa-156m83",
+    cluster_id = "lkc-r2wydp"
   },
   {
     name = "trusted.api-key.operator",
-    description = "trusted.sa.operator",
-    service_account_id = "sa-25627y",
-    cluster_id = "lkc-6o6706"
+    description = "trusted.api-key.operator",
+    service_account_id = "sa-nrp9z3",
+    cluster_id = "lkc-r2wydp"
   }
 ]
