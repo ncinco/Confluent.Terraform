@@ -15,7 +15,9 @@ terraform {
     storage_account_name = "confluentstate"
     container_name       = "trusted"
     key                  = "control_plane.tfstate"
-    use_azuread_auth     = true
+    use_msi              = true
+    subscription_id      = "7e36d9ff-064f-4f22-bcee-0a9c849d48f5"
+    tenant_id            = "2cad9261-8e15-4a74-9a69-65f0713c088e"
   }
 }
 
