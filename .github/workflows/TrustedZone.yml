@@ -48,14 +48,17 @@ jobs:
  
     - name: 'Terraform Format'
       id: format
+      working-directory: ./zones/trusted
       run: terraform fmt
          
     - name: 'Terraform Init'
       id: init
+      working-directory: ./zones/trusted
       run: terraform init
  
     - name: 'Terraform Validate'
       id: validate
+      working-directory: ./zones/trusted
       run: terraform validate
 
     - name: 'Terraform Plan'
