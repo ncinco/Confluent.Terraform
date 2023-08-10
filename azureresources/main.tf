@@ -21,11 +21,13 @@ provider "azurerm" {
 data "azurerm_client_config" "current" {
 }
 
+# resource group
 resource "azurerm_resource_group" "confluent_state_resource_group" {
   name     = var.resource_group_name
   location = var.resource_group_location
 }
 
+# key vault
 resource "azurerm_key_vault" "confluent_cloud_key_vault" {
   name                        = var.key_vault_name
   location                    = azurerm_resource_group.confluent_state_resource_group.location
@@ -53,4 +55,11 @@ resource "azurerm_key_vault" "confluent_cloud_key_vault" {
       "Recover"
     ]
   }
+}
+
+# add github runner service principal as kv admin
+resource "azurerm_role_assignment" "akv_sp" {
+  scope                = azurerm_key_vault.confluent_cloud_key_vault.id
+  role_definition_name = "Key Vault Administrator"
+  principal_id         = data.azurerm_client_config.current.object_id
 }
