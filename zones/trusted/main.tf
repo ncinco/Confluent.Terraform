@@ -11,7 +11,7 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "Terraform_State"
+    resource_group_name  = "confluent_resource_group"
     storage_account_name = "confluentstate"
     container_name       = "trusted"
     key                  = "control_plane.tfstate"
