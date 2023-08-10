@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write # write is required for requesting the JWT
+  id-token: write
   contents: read 
 
 jobs:
@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
  
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
