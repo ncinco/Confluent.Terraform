@@ -40,6 +40,7 @@ try:
   }
 
   api_key_response = pip._vendor.requests.api.post(confluent_cloud_api_url, data=json.dumps(payload), headers=headers, timeout=30)
+  print(api_key_response.json());
 
 except pip._vendor.requests.exceptions.HTTPError as error:
   print(error)
