@@ -24,7 +24,7 @@ jobs:
         shell: bash
  
     steps:
-    - uses: hashicorp/setup-terraform@v2
+    #- uses: hashicorp/setup-terraform@v2
 
     - name: Setup Python
       uses: actions/setup-python@v4
