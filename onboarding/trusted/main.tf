@@ -10,7 +10,7 @@ terraform {
     resource_group_name  = "Terraform_State"
     storage_account_name = "confluentstate"
     container_name       = "trusted"
-    key                  = "data_plane.tfstate"
+    key                  = "topics.tfstate"
   }
 }
 
