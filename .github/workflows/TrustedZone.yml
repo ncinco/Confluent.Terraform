@@ -3,10 +3,6 @@ name: 'TrustedZone'
 on:
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read 
-
 jobs:
   dev:
     name: 'dev'
@@ -25,22 +21,10 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./zones/trusted
  
     steps:
-    - name: 'Az CLI login'
-      uses: azure/login@v1
-      with:
-        client-id: ${{ secrets.ARM_CLIENT_ID }}
-        tenant-id: ${{ secrets.ARM_TENANT_ID }}
-        subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-
     - uses: hashicorp/setup-terraform@v2
-
-    - name: 'List az resources'
-      run: |
-        az group list
-        az keyvault list
-        az storage account list
 
     - name: 'Checkout'
       id: checkout
@@ -48,26 +32,21 @@ jobs:
 
     - name: 'Terraform Format'
       id: format
-      working-directory: ./zones/trusted
       run: terraform fmt
          
     - name: 'Terraform Init'
       id: init
-      working-directory: ./zones/trusted
       run: terraform init
  
     - name: 'Terraform Validate'
       id: validate
-      working-directory: ./zones/trusted
       run: terraform validate
 
     - name: 'Terraform Plan'
       id: plan
-      working-directory: ./zones/trusted
       run: terraform plan
  
     - name: Terraform Apply
       id: apply
-      working-directory: ./zones/trusted
       if: github.ref == 'refs/heads/main'
       run: terraform apply --auto-approve
