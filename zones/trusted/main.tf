@@ -15,7 +15,7 @@ terraform {
     storage_account_name = "confluentstate"
     container_name       = "trusted"
     key                  = "control_plane.tfstate"
-    access_key           = "Cd16ICEFcIUxMmI2cFS9b0gUJtw3gGUmM0mHGV325hIqYX17c1/eei+eKrbKjYmRowFm2raJnWhF+AStDEzjpA=="
+    use_azuread_auth     = true
   }
 }
 
