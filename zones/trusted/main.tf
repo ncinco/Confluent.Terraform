@@ -19,7 +19,9 @@ terraform {
 }
 
 provider "azurerm" {
-   features {}
+  features {}
+
+  use_msi = true
 }
 
 module "azureresources" {
