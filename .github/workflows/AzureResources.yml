@@ -19,7 +19,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./zones/trusted
+        working-directory: ./azureresources
  
     steps:
     - uses: hashicorp/setup-terraform@v2
