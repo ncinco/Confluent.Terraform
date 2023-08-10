@@ -2,27 +2,23 @@ name: 'UnTrustedZone'
  
 on:
   workflow_dispatch:
-    inputs:
-      destroy:
-        description: "Select yes if you want to destroy the resources."
-        type: choice
-        required: true
-        options:
-        - no
-        - yes
 
 jobs:
   dev:
     name: 'dev'
+    environment: dev
     env:
-      ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
       CONFLUENT_CLOUD_API_KEY: ${{ secrets.CONFLUENT_CLOUD_API_KEY }}
       CONFLUENT_CLOUD_API_SECRET: ${{secrets.CONFLUENT_CLOUD_API_SECRET}}
+      
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SKIP_PROVIDER_REGISTRATION: true
+      
       TERM: linux
     runs-on: ubuntu-latest
-    environment: dev
- 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
@@ -30,11 +26,11 @@ jobs:
  
     steps:
     - uses: hashicorp/setup-terraform@v2
-    
+
     - name: 'Checkout'
       id: checkout
       uses: actions/checkout@v3
- 
+
     - name: 'Terraform Format'
       id: format
       run: terraform fmt
@@ -49,21 +45,9 @@ jobs:
 
     - name: 'Terraform Plan'
       id: plan
-      run: |
-        if '${{ github.event.inputs.destroy }}' == 'true'
-        then
-          terraform plan -destroy
-        else
-          terraform plan
-        fi
+      run: terraform plan
  
     - name: Terraform Apply
       id: apply
       if: github.ref == 'refs/heads/main'
-      run: |
-        if '${{ github.event.inputs.destroy }}' == 'true'
-        then
-          terraform apply -destroy --auto-approve
-        else
-          terraform apply --auto-approve
-        fi
+      run: terraform apply --auto-approve
