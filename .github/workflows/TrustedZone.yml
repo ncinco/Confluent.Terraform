@@ -22,7 +22,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        
+        working-directory: zones/trusted
  
     steps:
     - uses: hashicorp/setup-terraform@v2
@@ -43,26 +43,21 @@ jobs:
 
     - name: 'Terraform Format'
       id: format
-      working-directory: ./zones/trusted
       run: terraform fmt
          
     - name: 'Terraform Init'
       id: init
-      working-directory: ./zones/trusted
       run: terraform init
  
     - name: 'Terraform Validate'
       id: validate
-      working-directory: ./zones/trusted
       run: terraform validate
 
     - name: 'Terraform Plan'
       id: plan
-      working-directory: ./zones/trusted
       run: terraform plan
  
     - name: Terraform Apply
       id: apply
-      working-directory: ./zones/trusted
       if: github.ref == 'refs/heads/main'
       run: terraform apply --auto-approve
