@@ -28,7 +28,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        # working-directory: ./zones/trusted
  
     steps:
     - name: 'Az CLI login'
@@ -61,9 +60,11 @@ jobs:
 
     - name: 'Terraform Plan'
       id: plan
+      working-directory: ./zones/trusted
       run: terraform plan
  
     - name: Terraform Apply
       id: apply
+      working-directory: ./zones/trusted
       if: github.ref == 'refs/heads/main'
       run: terraform apply --auto-approve
