@@ -17,6 +17,7 @@ variable "rest_endpoint" {
 variable "app_manager_api_key" {
   description = "Application Manager Key"
   type        = string
+  sensitive   = true
 }
 
 variable "app_manager_api_secret" {

@@ -27,6 +27,18 @@ variable "service_accounts" {
   }))
 }
 
+variable "app_manager_api_key" {
+  description = "Application Manager Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "app_manager_api_secret" {
+  description = "Application Manager Secret"
+  type        = string
+  sensitive   = true
+}
+
 variable "api_keys" {
   description = "List of api key(s) for a cluster"
   type = list(object({
