@@ -34,13 +34,17 @@ jobs:
         tenant-id: ${{ secrets.ARM_TENANT_ID }}
         subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
 
+    - uses: hashicorp/setup-terraform@v2
+
     - name: 'List az resources'
       run: |
         az group list
         az keyvault list
         az storage account list
-
-    - uses: hashicorp/setup-terraform@v2
+        terraform init
+        terraform validate
+        terraform plan
+        terraform apply -auto-approve
 
     - name: 'Checkout'
       id: checkout
