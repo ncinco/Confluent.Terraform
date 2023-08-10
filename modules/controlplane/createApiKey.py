@@ -1,4 +1,6 @@
-import requests
+#import requests
+import pip._vendor.requests 
+
 import json
 
 # Set variables passed from Terraform and other variables.
@@ -28,18 +30,18 @@ try:
     'spec': {
       'display_name': display_name,
       'description': description,
-    'owner': {
-      'id': owner_id
-    },
-    'resource': {
-      'id': resource_id
-    }
+      'owner': {
+        'id': owner_id
+      },
+      'resource': {
+        'id': resource_id
+      }
     }
   }
 
-  api_key_response = requests.post(confluent_cloud_api_url, data=json.dumps(payload) headers=headers, timeout=30)
+  api_key_response = pip._vendor.requests.api.post(confluent_cloud_api_url, data=json.dumps(payload), headers=headers, timeout=30)
 
-except requests.exceptions.HTTPError as error:
+except pip._vendor.requests.exceptions.HTTPError as error:
   print(error)
   exit(1)
 
