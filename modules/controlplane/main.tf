@@ -36,7 +36,7 @@ resource "terraform_data" "confluent_api_key" {
       azure_client_secret        = var.azure_client_secret
 
       // make sure we do not print the token in terraform command prompt output
-      quiet = true
+      quiet = false
     }
   }
 }
