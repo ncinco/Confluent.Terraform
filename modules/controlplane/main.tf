@@ -31,8 +31,8 @@ resource "terraform_data" "confluent_api_key" {
 
       # service principal related variables
       AZURE_SUBSCRIPTION_ID      = var.azure_subscription_id
-      AZURE_CLIENT_ID            = var.azure_tenant_id
       AZURE_TENANT_ID            = var.azure_client_id
+      AZURE_CLIENT_ID            = var.azure_tenant_id
       AZURE_CLIENT_SECRET        = var.azure_client_secret
 
       // make sure we do not print the token in terraform command prompt output
