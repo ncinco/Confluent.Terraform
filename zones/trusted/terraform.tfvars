@@ -18,13 +18,13 @@ service_accounts = [
 
 api_keys = [
   {
-    name = "trusted.api-key.cloud-cluster-admin v3",
+    name = "trusted.api-key.cloud-cluster-admin v4",
     description = "trusted.api-key.cloud-cluster-admin",
     service_account_id = "sa-156m83",
     cluster_id = "lkc-r2wydp"
   },
   {
-    name = "trusted.api-key.operator v3",
+    name = "trusted.api-key.operator v4",
     description = "trusted.api-key.operator",
     service_account_id = "sa-nrp9z3",
     cluster_id = "lkc-r2wydp"
