@@ -28,5 +28,11 @@ api_keys = [
     description = "trusted.api-key.operator",
     service_account_id = "sa-nrp9z3",
     cluster_id = "lkc-r2wydp"
+  },
+  {
+    name = "trusted.api-key.operator.v2",
+    description = "trusted.api-key.operator",
+    service_account_id = "sa-nrp9z3",
+    cluster_id = "lkc-r2wydp"
   }
 ]
