@@ -4,7 +4,7 @@ import json
 import os
 
 from azure.keyvault.secrets import SecretClient
-from azure.identity import DefaultAzureCredential
+from azure.identity import ClientSecretCredential
 
 # constants
 confluent_cloud_api_url = "https://api.confluent.cloud/iam/v2/api-keys"
@@ -14,18 +14,14 @@ azure_key_vault_uri     = "https://confluentcloudkeyvault.vault.azure.net/"
 app_manager_api_key     = os.environ["app_manager_api_key"]
 app_manager_api_secret  = os.environ["app_manager_api_secret"]
 
+azure_tenant_id         = os.environ["azure_tenant_id"]
+azure_client_id         = os.environ["azure_client_id"]
+azure_client_secret     = os.environ["azure_client_secret"]
+
 display_name            = os.environ["display_name"]
 description             = os.environ["description"]
 owner_id                = os.environ["owner_id"]
 resource_id             = os.environ["resource_id"]
-
-# app_manager_api_key     = "BPXWC5G72JBEGBA2"
-# app_manager_api_secret  = "10/lXZV23NGn8QQh4gA9GP8ByCTU5CxdE2lOyvf1wf+U4XbKnzDAlP1J48mLFsB7"
-
-# display_name            = "trusted.api-key.cloud-cluster-admin"
-# description             = "trusted.api-key.cloud-cluster-admin"
-# owner_id                = "sa-156m83"
-# resource_id             = "lkc-r2wydp"
 
 # begin: functions
 def encode_token(key: str, secret: str) -> str:
@@ -70,7 +66,7 @@ api_key_response_json = api_key_response.json()
 api_key_id = api_key_response_json.get("id")
 api_key_secret = api_key_response_json.get("spec").get("secret")
 
-credential = DefaultAzureCredential()
+credential = ClientSecretCredential(azure_tenant_id, azure_client_id, azure_client_secret)
 secret_client = SecretClient(vault_url=azure_key_vault_uri, credential=credential)
 secret_client.set_secret(api_key_id, api_key_secret)
 
