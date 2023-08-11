@@ -1,3 +1,25 @@
+# Service Principal Variables
+variable "ARM_SUBSCRIPTION_ID" {
+  type        = string
+  description = "Service Principal Subscription ID"
+}
+
+variable "ARM_TENANT_ID" {
+  type        = string
+  description = "Service Principal Tenant ID"
+}
+
+variable "ARM_CLIENT_ID" {
+  type        = string
+  description = "Service Principal Client ID"
+}
+
+variable "ARM_CLIENT_SECRET" {
+  type        = string
+  description = "Service Principal Secret"
+}
+
+# cluster related variables
 variable "environment" {
   description = "Name of environment"
   type        = string

@@ -29,6 +29,12 @@ resource "terraform_data" "confluent_api_key" {
       owner_id                  = each.value.service_account_id
       resource_id               = each.value.cluster_id
 
+      # service principal related variables
+      ARM_SUBSCRIPTION_ID        = var.ARM_SUBSCRIPTION_ID
+      ARM_TENANT_ID              = var.ARM_TENANT_ID
+      ARM_CLIENT_ID              = var.ARM_CLIENT_ID
+      ARM_CLIENT_SECRET          = var.ARM_CLIENT_SECRET
+
       // make sure we do not print the token in terraform command prompt output
       quiet = true
     }
