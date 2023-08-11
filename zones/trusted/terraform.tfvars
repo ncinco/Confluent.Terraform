@@ -40,8 +40,7 @@ api_keys = [
     description = "trusted.api-key.operator v7",
     service_account_id = "sa-nrp9z3",
     cluster_id = "lkc-r2wydp"
-  }
-,
+  },
   {
     name = "trusted.api-key.cloud-cluster-admin v8",
     description = "trusted.api-key.cloud-cluster-admin v8",
@@ -51,6 +50,18 @@ api_keys = [
   {
     name = "trusted.api-key.operator v8",
     description = "trusted.api-key.operator v8",
+    service_account_id = "sa-nrp9z3",
+    cluster_id = "lkc-r2wydp"
+  },
+  {
+    name = "trusted.api-key.cloud-cluster-admin v9",
+    description = "trusted.api-key.cloud-cluster-admin v9",
+    service_account_id = "sa-156m83",
+    cluster_id = "lkc-r2wydp"
+  },
+  {
+    name = "trusted.api-key.operator v9",
+    description = "trusted.api-key.operator v9",
     service_account_id = "sa-nrp9z3",
     cluster_id = "lkc-r2wydp"
   }
