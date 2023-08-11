@@ -15,7 +15,7 @@ resource "confluent_service_account" "service-accounts" {
 }
 
 resource "terraform_data" "confluent_api_key" {
-  for_each      = { for api_key in var.api_keys : api_key.name => api_key }
+  for_each      = { for api_key in var.api_keys : api_key.id => api_key }
 
   provisioner "local-exec" {
     working_dir = path.module
