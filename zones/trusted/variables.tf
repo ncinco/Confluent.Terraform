@@ -1,20 +1,20 @@
 # Service Principal Variables
-variable "ARM_SUBSCRIPTION_ID" {
+variable "azure_subscription_id" {
   type        = string
   description = "Service Principal Subscription ID"
 }
 
-variable "ARM_TENANT_ID" {
+variable "azure_tenant_id" {
   type        = string
   description = "Service Principal Tenant ID"
 }
 
-variable "ARM_CLIENT_ID" {
+variable "azure_client_id" {
   type        = string
   description = "Service Principal Client ID"
 }
 
-variable "ARM_CLIENT_SECRET" {
+variable "azure_client_secret" {
   type        = string
   description = "Service Principal Secret"
 }

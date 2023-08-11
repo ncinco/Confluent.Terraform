@@ -39,8 +39,8 @@ module "controlplane" {
   api_keys                   = var.api_keys
 
   # service principal related variables
-  ARM_SUBSCRIPTION_ID        = var.ARM_SUBSCRIPTION_ID
-  ARM_TENANT_ID              = var.ARM_TENANT_ID
-  ARM_CLIENT_ID              = var.ARM_CLIENT_ID
-  ARM_CLIENT_SECRET          = var.ARM_CLIENT_SECRET
+  azure_subscription_id      = var.azure_subscription_id
+  azure_tenant_id            = var.azure_tenant_id
+  azure_client_id            = var.azure_client_id
+  azure_client_secret        = var.azure_client_secret
 }
