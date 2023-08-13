@@ -26,6 +26,11 @@ role_bindings = [
     principal   = "User:sa-8y7w3q"
     role_name   = "CloudClusterAdmin"
     crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-63r6xq/cloud-cluster=lkc-ny160k/kafka=lkc-ny160k"
+  },
+  {
+    principal   = "User:sa-mpn8qw"
+    role_name   = "Operator"
+    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-63r6xq/cloud-cluster=lkc-ny160k/kafka=lkc-ny160k"
   }
 ]
 
