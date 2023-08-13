@@ -15,7 +15,7 @@ resource "confluent_service_account" "service-accounts" {
 }
 
 resource "confluent_role_binding" "role-bindings" {
-  for_each     = { for role_binding in var.role_bindings : role_binding.name => role_binding }
+  for_each     = { for role_binding in var.role_bindings : role_binding.principal => role_binding }
 
   principal   = each.value.principal
   role_name   = each.value.role_name
