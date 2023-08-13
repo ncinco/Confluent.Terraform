@@ -36,6 +36,7 @@ module "controlplane" {
   app_manager_api_secret     = var.app_manager_api_secret
 
   service_accounts           = var.service_accounts
+  role_bindings              = var.role_bindings
   api_keys                   = var.api_keys
 
   # service principal related variables

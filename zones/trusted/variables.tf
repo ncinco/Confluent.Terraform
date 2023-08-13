@@ -61,6 +61,15 @@ variable "app_manager_api_secret" {
   sensitive   = true
 }
 
+variable "role_bindings" {
+  description = "User role bindings"
+  type = list(object({
+    principal = string
+    role_name = string
+    crn_pattern = string
+  }))
+}
+
 variable "api_keys" {
   description = "List of api key(s) for a cluster"
   type = list(object({

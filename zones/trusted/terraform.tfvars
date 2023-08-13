@@ -16,6 +16,19 @@ service_accounts = [
   }
 ]
 
+# bindings
+# https://registry.terraform.io/providers/confluentinc/confluent/latest/docs/resources/confluent_role_binding
+# https://docs.confluent.io/cloud/current/access-management/access-control/rbac/overview.html#ccloud-rbac-roles
+# https://docs.confluent.io/cloud/current/api.html#section/Identifiers-and-URLs/Confluent-Resource-Names-(CRNs)
+
+role_bindings = [
+  {
+    principal   = "User:sa-8y7w3q"
+    role_name   = "CloudClusterAdmin"
+    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-63r6xq/cloud-cluster=lkc-ny160k/kafka=lkc-ny160k"
+  }
+]
+
 api_keys = [
   {
     name = "trusted.api-key.cloud-cluster-admin",
