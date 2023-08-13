@@ -20,49 +20,13 @@ api_keys = [
   {
     name = "trusted.api-key.cloud-cluster-admin v6",
     description = "trusted.api-key.cloud-cluster-admin v6",
-    service_account_id = "sa-156m83",
-    cluster_id = "lkc-r2wydp"
+    service_account_id = "sa-35krgm",
+    cluster_id = "lkc-8m7dg0"
   },
   {
     name = "trusted.api-key.operator v6",
     description = "trusted.api-key.operator v6",
-    service_account_id = "sa-nrp9z3",
-    cluster_id = "lkc-r2wydp"
-  },
-  {
-    name = "trusted.api-key.cloud-cluster-admin v7",
-    description = "trusted.api-key.cloud-cluster-admin v7",
-    service_account_id = "sa-156m83",
-    cluster_id = "lkc-r2wydp"
-  },
-  {
-    name = "trusted.api-key.operator v7",
-    description = "trusted.api-key.operator v7",
-    service_account_id = "sa-nrp9z3",
-    cluster_id = "lkc-r2wydp"
-  },
-  {
-    name = "trusted.api-key.cloud-cluster-admin v8",
-    description = "trusted.api-key.cloud-cluster-admin v8",
-    service_account_id = "sa-156m83",
-    cluster_id = "lkc-r2wydp"
-  },
-  {
-    name = "trusted.api-key.operator v8",
-    description = "trusted.api-key.operator v8",
-    service_account_id = "sa-nrp9z3",
-    cluster_id = "lkc-r2wydp"
-  },
-  {
-    name = "trusted.api-key.cloud-cluster-admin v9",
-    description = "trusted.api-key.cloud-cluster-admin v9",
-    service_account_id = "sa-156m83",
-    cluster_id = "lkc-r2wydp"
-  },
-  {
-    name = "trusted.api-key.operator v9",
-    description = "trusted.api-key.operator v9",
-    service_account_id = "sa-nrp9z3",
-    cluster_id = "lkc-r2wydp"
+    service_account_id = "sa-nr1w33",
+    cluster_id = "lkc-8m7dg0"
   }
 ]
