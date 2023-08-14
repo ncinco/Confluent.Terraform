@@ -44,6 +44,12 @@ variable "acls" {
   type = list(object({
     name = string
     description = string
+    resource_type = string
+    resource_name = string
+    principal = string
+    host = string
+    operation = string
+    permission = string
   }))
 }
 
