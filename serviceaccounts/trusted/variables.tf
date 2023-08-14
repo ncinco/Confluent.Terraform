@@ -50,6 +50,7 @@ variable "acls" {
     host = string
     operation = string
     permission = string
+    rest_endpoint = string
   }))
 }
 

@@ -53,5 +53,6 @@ acls = [
     host = "*"
     operation = "ALTER"
     permission = "ALLOW"
+    rest_endpoint = "https://pkc-4n66v.australiaeast.azure.confluent.cloud:443"
   }
 ]
