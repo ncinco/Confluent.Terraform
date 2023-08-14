@@ -19,12 +19,12 @@ role_bindings = [
   {
     principal   = "User:sa-qzq8r6"
     role_name   = "CloudClusterAdmin"
-    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-63r6xq/cloud-cluster=lkc-q8q6yd"
+    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-1jp61j/cloud-cluster=lkc-q8q6yd"
   },
   {
     principal   = "User:sa-g12kn3"
     role_name   = "Operator"
-    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-63r6xq/cloud-cluster=lkc-q8q6yd"
+    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-1jp61j/cloud-cluster=lkc-q8q6yd"
   }
 ]
 
