@@ -33,6 +33,7 @@ module "controlplane" {
   service_accounts           = var.service_accounts
   role_bindings              = var.role_bindings
   api_keys                   = var.api_keys
+  acls                       = var.acls
 
   # service principal related variables
   azure_subscription_id      = var.azure_subscription_id
