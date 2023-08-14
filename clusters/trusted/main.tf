@@ -23,7 +23,7 @@ provider "azurerm" {
 }
 
 module "controlplane" {
-  source = "../../modules/controlplane"
+  source = "../../modules/clusters"
 	
   environment                = var.environment
   cluster_name               = var.cluster_name

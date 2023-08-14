@@ -22,7 +22,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: zones/trusted
+        working-directory: clusters/trusted
  
     steps:
     - uses: hashicorp/setup-terraform@v2
