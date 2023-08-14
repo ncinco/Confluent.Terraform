@@ -59,6 +59,7 @@ resource "confluent_kafka_acl" "acls" {
   host          = each.value.host
   operation     = each.value.operation
   permission    = each.value.permission
+  rest_endpoint = each.value.rest_endpoint
 
   lifecycle {
     prevent_destroy = true
