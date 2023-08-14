@@ -39,7 +39,7 @@ variable "api_keys" {
   }))
 }
 
-variable "acl" {
+variable "acls" {
   description = "Access control list"
   type = list(object({
     name = string
