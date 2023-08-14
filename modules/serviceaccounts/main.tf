@@ -65,6 +65,11 @@ resource "confluent_kafka_acl" "acls" {
   permission    = each.value.permission
   rest_endpoint = each.value.rest_endpoint
 
+  credentials {
+    key         = var.app_manager_api_key
+    secret      = var.app_manager_api_secret
+  }
+
   lifecycle {
     prevent_destroy = true
   }
