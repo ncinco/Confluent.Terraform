@@ -39,6 +39,20 @@ variable "api_keys" {
   }))
 }
 
+variable "acls" {
+  description = "Access control list"
+  type = list(object({
+    name = string
+    description = string
+    resource_type = string
+    resource_name = string
+    principal = string
+    host = string
+    operation = string
+    permission = string
+  }))
+}
+
 # Service Principal Variables
 variable "azure_subscription_id" {
   type        = string

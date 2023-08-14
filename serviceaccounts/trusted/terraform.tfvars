@@ -42,3 +42,16 @@ api_keys = [
     cluster_id = "lkc-q8q6yd"
   }
 ]
+
+acls = [
+  {
+    name = "trusted.acl.cloud-cluster-admin",
+    description = "trusted.acl.cloud-cluster-admin",
+    resource_type = "CLUSTER",
+    resource_name = "lkc-q8q6yd",
+    principal = "User:sa-qzq8r6",
+    host = "*"
+    operation = "ALTER"
+    permission = "ALLOW"
+  }
+]
