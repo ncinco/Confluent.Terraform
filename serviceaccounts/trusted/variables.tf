@@ -42,6 +42,7 @@ variable "api_keys" {
 variable "acls" {
   description = "Access control list"
   type = list(object({
+    kafka_cluster_id = string
     name = string
     description = string
     resource_type = string

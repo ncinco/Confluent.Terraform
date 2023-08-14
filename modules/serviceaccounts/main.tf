@@ -52,6 +52,10 @@ resource "terraform_data" "confluent_api_key" {
 resource "confluent_kafka_acl" "acls" {
   for_each      = { for acl in var.acls : acl.name => acl }
 
+  kafka_cluster {
+    id          = each.value.kafka_cluster_id
+  }
+
   resource_type = each.value.resource_type
   resource_name = each.value.resource_name
   pattern_type  = "LITERAL"
