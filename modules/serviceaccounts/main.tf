@@ -8,18 +8,18 @@ terraform {
 }
 
 resource "confluent_service_account" "service-accounts" {
-  for_each     = { for service_account in var.service_accounts : service_account.name => service_account }
+  for_each      = { for service_account in var.service_accounts : service_account.name => service_account }
 
-  display_name = each.value.name
-  description  = each.value.description
+  display_name  = each.value.name
+  description   = each.value.description
 }
 
 resource "confluent_role_binding" "role-bindings" {
-  for_each     = { for role_binding in var.role_bindings : role_binding.principal => role_binding }
+  for_each      = { for role_binding in var.role_bindings : role_binding.principal => role_binding }
 
-  principal   = each.value.principal
-  role_name   = each.value.role_name
-  crn_pattern = each.value.crn_pattern
+  principal     = each.value.principal
+  role_name     = each.value.role_name
+  crn_pattern   = each.value.crn_pattern
 }
 
 resource "terraform_data" "confluent_api_key" {
