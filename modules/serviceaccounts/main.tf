@@ -52,13 +52,13 @@ resource "terraform_data" "confluent_api_key" {
 resource "confluent_kafka_acl" "acls" {
   for_each      = { for acl in var.acls : acl.name => acl }
 
-  resource_type = each.key.value.resource_type
-  resource_name = each.key.value.resource_name
-  pattern_type  = each.key.value.pattern_type
-  principal     = each.key.value.principal
-  host          = each.key.value.host
-  operation     = each.key.value.operation
-  permission    = each.key.value.permission
+  resource_type = each.value.resource_type
+  resource_name = each.value.resource_name
+  pattern_type  = each.value.pattern_type
+  principal     = each.value.principal
+  host          = each.value.host
+  operation     = each.value.operation
+  permission    = each.value.permission
 
   lifecycle {
     prevent_destroy = true
