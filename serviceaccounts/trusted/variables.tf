@@ -1,33 +1,4 @@
-# Service Principal Variables
-variable "azure_subscription_id" {
-  type        = string
-  description = "Service Principal Subscription ID"
-}
-
-variable "azure_tenant_id" {
-  type        = string
-  description = "Service Principal Tenant ID"
-}
-
-variable "azure_client_id" {
-  type        = string
-  description = "Service Principal Client ID"
-}
-
-variable "azure_client_secret" {
-  type        = string
-  description = "Service Principal Secret"
-}
-
-# service account related variables
-variable "service_accounts" {
-  description = "List of service accounts(s) for a cluster"
-  type = list(object({
-    name = string
-    description = string
-  }))
-}
-
+# confluent related variables
 variable "app_manager_api_key" {
   description = "Application Manager Key"
   type        = string
@@ -38,6 +9,15 @@ variable "app_manager_api_secret" {
   description = "Application Manager Secret"
   type        = string
   sensitive   = true
+}
+
+# service account related variables
+variable "service_accounts" {
+  description = "List of service accounts(s) for a cluster"
+  type = list(object({
+    name = string
+    description = string
+  }))
 }
 
 variable "role_bindings" {
@@ -57,4 +37,25 @@ variable "api_keys" {
     service_account_id = string
     cluster_id = string
   }))
+}
+
+# Service Principal Variables
+variable "azure_subscription_id" {
+  type        = string
+  description = "Service Principal Subscription ID"
+}
+
+variable "azure_tenant_id" {
+  type        = string
+  description = "Service Principal Tenant ID"
+}
+
+variable "azure_client_id" {
+  type        = string
+  description = "Service Principal Client ID"
+}
+
+variable "azure_client_secret" {
+  type        = string
+  description = "Service Principal Secret"
 }

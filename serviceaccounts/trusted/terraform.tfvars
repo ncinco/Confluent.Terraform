@@ -1,9 +1,3 @@
-# cluster related variables
-environment = "trusted"
-cluster_name = "trusted"
-cluster_cloud = "AZURE"
-cluster_region = "australiaeast"
-
 # service account related variables
 service_accounts = [
   {
