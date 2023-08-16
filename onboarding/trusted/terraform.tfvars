@@ -1,6 +1,6 @@
 # cluster related variables
-environment_id         = "env-2rxxkm"
-cluster_id             = "lkc-3n65pm"
+environment_id         = "env-1jp61j"
+cluster_id             = "lkc-q8q6yd"
 rest_endpoint          = "https://pkc-4n66v.australiaeast.azure.confluent.cloud:443"
 
 # topic related variables
