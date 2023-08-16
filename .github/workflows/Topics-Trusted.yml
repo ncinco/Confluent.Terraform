@@ -7,9 +7,13 @@ jobs:
   dev:
     name: 'dev'
     env:
-      ARM_ACCESS_KEY: ${{ secrets.ARM_ACCESS_KEY }}
       CONFLUENT_CLOUD_API_KEY: ${{ secrets.CONFLUENT_CLOUD_API_KEY }}
       CONFLUENT_CLOUD_API_SECRET: ${{secrets.CONFLUENT_CLOUD_API_SECRET}}
+
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       TERM: linux
     runs-on: ubuntu-latest
     environment: dev
