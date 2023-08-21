@@ -38,14 +38,14 @@ api_keys = [
     name               = "trusted.api-key.cloud-cluster-admin",
     description        = "trusted.api-key.cloud-cluster-admin",
     service_account_id = "sa-nr9z0d",
-    cluster_id         = "lkc-q8q6yd"
+    cluster_id         = "lkc-3nm3xo"
   },
   {
     request_id         = 2,
     name               = "trusted.api-key.operator",
     description        = "trusted.api-key.operator",
     service_account_id = "sa-15m80v",
-    cluster_id         = "lkc-q8q6yd"
+    cluster_id         = "lkc-3nm3xo"
   },
   {
     request_id  = 3,
