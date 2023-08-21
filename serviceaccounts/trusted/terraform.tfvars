@@ -58,6 +58,7 @@ api_keys = [
 
 acls = [
   {
+    request_id       = 1,
     kafka_cluster_id = "lkc-q8q6yd"
     name             = "trusted.acl.cloud-cluster-admin",
     description      = "trusted.acl.cloud-cluster-admin",
