@@ -43,7 +43,7 @@ api_keys = [
   },
   {
     name = "trusted.api-key.operator.schema-registry",
-    description = "trusted.api-key.operator",
+    description = "trusted.api-key.operator.schema-registry",
     service_account_id = "sa-g12kn3",
     cluster_id = "lsrc-kgz6m2"
   }
