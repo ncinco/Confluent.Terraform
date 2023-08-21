@@ -17,14 +17,14 @@ service_accounts = [
 
 role_bindings = [
   {
-    principal   = "User:sa-qzq8r6"
+    principal   = "User:sa-zj9oy7"
     role_name   = "CloudClusterAdmin"
-    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-1jp61j/cloud-cluster=lkc-q8q6yd"
+    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-m89r02/cloud-cluster=lkc-3nm3xo"
   },
   {
-    principal   = "User:sa-g12kn3"
+    principal   = "User:sa-zj9oy7"
     role_name   = "Operator"
-    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-1jp61j/cloud-cluster=lkc-q8q6yd"
+    crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-m89r02/cloud-cluster=lkc-3nm3xo"
   }
 ]
 
@@ -32,19 +32,19 @@ api_keys = [
   {
     name = "trusted.api-key.cloud-cluster-admin",
     description = "trusted.api-key.cloud-cluster-admin",
-    service_account_id = "sa-qzq8r6",
+    service_account_id = "sa-zj9oy7",
     cluster_id = "lkc-q8q6yd"
   },
   {
     name = "trusted.api-key.operator",
     description = "trusted.api-key.operator",
-    service_account_id = "sa-g12kn3",
+    service_account_id = "sa-zj9oy7",
     cluster_id = "lkc-q8q6yd"
   },
   {
     name = "trusted.api-key.operator.schema-registry",
     description = "trusted.api-key.operator.schema-registry",
-    service_account_id = "sa-g12kn3",
+    service_account_id = "sa-zj9oy7",
     cluster_id = "lsrc-kgz6m2"
   }
 ]

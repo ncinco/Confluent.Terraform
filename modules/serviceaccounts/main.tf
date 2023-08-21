@@ -14,13 +14,13 @@ resource "confluent_service_account" "service-accounts" {
   description   = each.value.description
 }
 
-/* resource "confluent_role_binding" "role-bindings" {
+resource "confluent_role_binding" "role-bindings" {
   for_each      = { for role_binding in var.role_bindings : role_binding.principal => role_binding }
 
   principal     = each.value.principal
   role_name     = each.value.role_name
   crn_pattern   = each.value.crn_pattern
-} */
+}
 
 /* resource "terraform_data" "confluent_api_key" {
   for_each      = { for api_key in var.api_keys : api_key.name => api_key }
