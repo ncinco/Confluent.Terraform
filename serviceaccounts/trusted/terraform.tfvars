@@ -20,13 +20,13 @@ service_accounts = [
 role_bindings = [
   {
     request_id  = 1,
-    principal   = "User:sa-zj9oy7"
+    principal   = "User:sa-nr9z0d"
     role_name   = "CloudClusterAdmin"
     crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-m89r02/cloud-cluster=lkc-3nm3xo"
   },
   {
     request_id  = 2,
-    principal   = "User:sa-zj9oy7"
+    principal   = "User:sa-nr9z0d"
     role_name   = "Operator"
     crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-m89r02/cloud-cluster=lkc-3nm3xo"
   }
