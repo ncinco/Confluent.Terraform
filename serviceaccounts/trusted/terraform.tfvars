@@ -59,12 +59,12 @@ api_keys = [
 acls = [
   {
     request_id       = 1,
-    kafka_cluster_id = "lkc-q8q6yd"
+    kafka_cluster_id = "lkc-3nm3xo"
     name             = "trusted.acl.cloud-cluster-admin",
     description      = "trusted.acl.cloud-cluster-admin",
     resource_type    = "CLUSTER",
     resource_name    = "kafka-cluster",
-    principal        = "User:sa-qzq8r6",
+    principal        = "User:sa-nr9z0d",
     host             = "*"
     operation        = "ALTER"
     permission       = "ALLOW"

@@ -49,7 +49,7 @@ resource "terraform_data" "confluent_api_key" {
   }
 }
 
-/* resource "confluent_kafka_acl" "acls" {
+resource "confluent_kafka_acl" "acls" {
   for_each      = { for acl in var.acls : acl.request_id => acl }
 
   kafka_cluster {
@@ -73,4 +73,4 @@ resource "terraform_data" "confluent_api_key" {
   lifecycle {
     prevent_destroy = true
   }
-} */
+}
