@@ -15,6 +15,7 @@ variable "app_manager_api_secret" {
 variable "service_accounts" {
   description = "List of service accounts(s) for a cluster"
   type = list(object({
+    request_id = number
     name = string
     description = string
   }))
@@ -23,6 +24,7 @@ variable "service_accounts" {
 variable "role_bindings" {
   description = "User role bindings"
   type = list(object({
+    request_id = number
     principal = string
     role_name = string
     crn_pattern = string
@@ -32,6 +34,7 @@ variable "role_bindings" {
 variable "api_keys" {
   description = "List of api key(s) for a cluster"
   type = list(object({
+    request_id = number
     name = string
     description = string
     service_account_id = string
@@ -42,6 +45,7 @@ variable "api_keys" {
 variable "acls" {
   description = "Access control list"
   type = list(object({
+    request_id = number
     kafka_cluster_id = string
     name = string
     description = string

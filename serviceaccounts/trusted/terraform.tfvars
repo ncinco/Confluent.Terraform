@@ -1,11 +1,13 @@
 # service account related variables
 service_accounts = [
   {
-    name = "trusted.sa.cloud-cluster-admin",
+    request_id  = 1,
+    name        = "trusted.sa.cloud-cluster-admin",
     description = "CloudClusterAdmin service account for Trusted cluster."
   },
   {
-    name = "trusted.sa.operator",
+    request_id  = 2,
+    name        = "trusted.sa.operator",
     description = "Operator service account for Trusted cluster."
   }
 ]
@@ -17,11 +19,13 @@ service_accounts = [
 
 role_bindings = [
   {
+    request_id  = 1,
     principal   = "User:sa-zj9oy7"
     role_name   = "CloudClusterAdmin"
     crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-m89r02/cloud-cluster=lkc-3nm3xo"
   },
   {
+    request_id  = 2,
     principal   = "User:sa-zj9oy7"
     role_name   = "Operator"
     crn_pattern = "crn://confluent.cloud/organization=4bcb09a9-ed92-465c-b6b6-3175ba61fe66/environment=env-m89r02/cloud-cluster=lkc-3nm3xo"
@@ -30,36 +34,39 @@ role_bindings = [
 
 api_keys = [
   {
-    name = "trusted.api-key.cloud-cluster-admin",
-    description = "trusted.api-key.cloud-cluster-admin",
+    request_id         = 1,
+    name               = "trusted.api-key.cloud-cluster-admin",
+    description        = "trusted.api-key.cloud-cluster-admin",
     service_account_id = "sa-zj9oy7",
-    cluster_id = "lkc-q8q6yd"
+    cluster_id         = "lkc-q8q6yd"
   },
   {
-    name = "trusted.api-key.operator",
-    description = "trusted.api-key.operator",
+    request_id         = 2,
+    name               = "trusted.api-key.operator",
+    description        = "trusted.api-key.operator",
     service_account_id = "sa-zj9oy7",
-    cluster_id = "lkc-q8q6yd"
+    cluster_id         = "lkc-q8q6yd"
   },
   {
-    name = "trusted.api-key.operator.schema-registry",
-    description = "trusted.api-key.operator.schema-registry",
+    request_id  = 3,
+    name               = "trusted.api-key.operator.schema-registry",
+    description        = "trusted.api-key.operator.schema-registry",
     service_account_id = "sa-zj9oy7",
-    cluster_id = "lsrc-kgz6m2"
+    cluster_id         = "lsrc-kgz6m2"
   }
 ]
 
 acls = [
   {
     kafka_cluster_id = "lkc-q8q6yd"
-    name = "trusted.acl.cloud-cluster-admin",
-    description = "trusted.acl.cloud-cluster-admin",
-    resource_type = "CLUSTER",
-    resource_name = "kafka-cluster",
-    principal = "User:sa-qzq8r6",
-    host = "*"
-    operation = "ALTER"
-    permission = "ALLOW"
-    rest_endpoint = "https://pkc-4n66v.australiaeast.azure.confluent.cloud:443"
+    name             = "trusted.acl.cloud-cluster-admin",
+    description      = "trusted.acl.cloud-cluster-admin",
+    resource_type    = "CLUSTER",
+    resource_name    = "kafka-cluster",
+    principal        = "User:sa-qzq8r6",
+    host             = "*"
+    operation        = "ALTER"
+    permission       = "ALLOW"
+    rest_endpoint    = "https://pkc-4n66v.australiaeast.azure.confluent.cloud:443"
   }
 ]
