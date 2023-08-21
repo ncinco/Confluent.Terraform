@@ -22,7 +22,7 @@ resource "confluent_role_binding" "role-bindings" {
   crn_pattern   = each.value.crn_pattern
 }
 
-/* resource "terraform_data" "confluent_api_key" {
+resource "terraform_data" "confluent_api_key" {
   for_each      = { for api_key in var.api_keys : api_key.request_id => api_key }
 
   provisioner "local-exec" {
@@ -47,7 +47,7 @@ resource "confluent_role_binding" "role-bindings" {
       quiet = true
     }
   }
-} */
+}
 
 /* resource "confluent_kafka_acl" "acls" {
   for_each      = { for acl in var.acls : acl.request_id => acl }
