@@ -4,6 +4,11 @@ variable "environment" {
 }
 
 variable "cluster_name" {
+  description = "Availability of a cluster"
+  type        = string
+}
+
+variable "cluster_availability" {
   description = "Name of a cluster"
   type        = string
 }
